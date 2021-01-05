@@ -1,17 +1,17 @@
 khuc dinh thang 
 10
+thang khuc
+9
+khuc dinh thagn 
+4
 thang
 3
-_
-0
-_
-0
-_
-0
-_
-0
-_
-0
+dinh thang
+3
+khuc thang
+3
+khuc 
+1
 _
 0
 _

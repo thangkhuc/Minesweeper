@@ -13,6 +13,7 @@ public:
     int nebeneMine;
     bool istMarkiert;
 
+
 };
 
 #endif // CELL_H

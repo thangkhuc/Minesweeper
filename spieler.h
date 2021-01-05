@@ -10,7 +10,7 @@ public:
     int score;
 
     Spieler();
-    Spieler(Spieler& spieler);
+    Spieler(const Spieler& spieler);
     ~Spieler();
     void set_Spieler();
 

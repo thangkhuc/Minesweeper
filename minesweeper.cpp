@@ -99,7 +99,7 @@ void load_Highscores()
         getline(highscores_Save, score);
 
         int betrag = 0;
-        for (int j = 0; j < score.length() ; ++j ) {
+        for (unsigned int j = 0; j < score.length() ; ++j ) {
             betrag = betrag * 10 + score.at(j) - '0';
         }
         p_highscores[i].score = betrag;

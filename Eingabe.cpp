@@ -1,7 +1,7 @@
 #include "Eingabe.h"
 
 Eingabe :: Eingabe()
-{
+{   
     row = 0;
     col = 0;
     markieren = false;
@@ -22,6 +22,7 @@ void Eingabe :: typUmwandlung(string eingabe) //Typumwandlungkonstruktor
 
     for (int i = 0; i < 2 ; ++i) {
         while (pos < eingabe.length() && !isdigit(eingabe.at(pos))){
+            
             if (eingabe.at(pos) == 'm')
                 markieren = true;
             else if (eingabe.at(pos) == 'r')

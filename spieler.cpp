@@ -6,7 +6,7 @@ Spieler::Spieler()
     score = 0;
 }
 
-Spieler :: Spieler(Spieler& spieler) // kopierkonstruktur
+Spieler :: Spieler(const Spieler& spieler) // kopierkonstruktur
     : name(spieler.name), score(spieler.score){}
 
 void Spieler :: set_Spieler()

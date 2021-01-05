@@ -17,8 +17,8 @@ public:
     void setMinePos();
     void printField();
     void minePosSort();
-    bool openCell(Eingabe eingabe);
-    int aroundMineCount(Eingabe eingabe);
+    bool openCell(const Eingabe eingabe);
+    int aroundMineCount(const Eingabe eingabe);
     void explodieren();
     void placeMine();
     void setSize();

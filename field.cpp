@@ -84,7 +84,7 @@ void Field :: minePosSort() {
     }
 }
 
-bool Field :: openCell(Eingabe eingabe){
+bool Field :: openCell(const Eingabe eingabe){
     if (p_field[eingabe.row][eingabe.col].istGeoeffnet == true)// false wenn das Cell schon geoeffnet ist
         return false;
 
@@ -125,7 +125,7 @@ bool Field :: openCell(Eingabe eingabe){
     }
 }
 
-int Field :: aroundMineCount(Eingabe eingabe){
+int Field :: aroundMineCount(const Eingabe eingabe){
     int count = 0;
     int row1 = eingabe.row == 0 ? 0 : -1; // wenn das Cell an der obenen Grenze ist, ist row1 0
     int col1 = eingabe.col == 0 ? 0 : -1; // wenn das Cell an der rechtenen Grenze ist, ist col1 0
@@ -196,4 +196,10 @@ bool Field :: winCondition()
         return false;
 }
 
-Field :: ~Field(){}
+Field :: ~Field(){
+    delete p_minePos;
+    for (int i = 0; i < rows ;i++ )
+        delete[] p_field[i];
+    delete p_field;
+
+}
