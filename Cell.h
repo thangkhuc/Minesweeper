@@ -4,15 +4,23 @@
 using namespace std;
 
 class Cell{
-public:
-    Cell();
-    ~Cell();
-
+private:
     bool istMine;
     bool istGeoeffnet;
     int nebeneMine;
     bool istMarkiert;
+public:
+    Cell();
+    ~Cell();
 
+    bool getIstMine();
+    bool getIstGeoeffnet();
+    bool getIstMarkiert();
+    int getNebeneMine();
+    void setIstMine(bool);
+    void setIstGeoeffnet(bool);
+    void setIstMarkiert(bool);
+    void setNebeneMine(int);
 
 };
 

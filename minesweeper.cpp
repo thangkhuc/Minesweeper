@@ -29,9 +29,9 @@ bool einleitung()
     cout << "\t\t| EINLEITUNG |" << endl;
     cout << "\t\t--------------" << endl;
     cout << "-Das Spiel ist normalerweise beendet, wenn eine Mine aufgedeckt wird.\n"
-            "-Das Spiel wird fortgesetzt, wenn Sie ein leeres Feld aufdecken.\n"
-            "-Wird beim Aufdecken eines Feldes eine Zahl angezeigt, steht diese fuer die Anzahl der Minen, die in den benachbarten 8 Feldern verborgen sind.\n"
-            "-Anhand dieser Angabe kann abgeleitet werden, unter welchen der angrenzenden Feldern sich Minen befinden und auf welche Felder gefahrlos geklickt werden kann.\n\n" << endl;
+        "-Das Spiel wird fortgesetzt, wenn Sie ein leeres Feld aufdecken.\n"
+        "-Wird beim Aufdecken eines Feldes eine Zahl angezeigt, steht diese fuer die Anzahl der Minen, die in den benachbarten 8 Feldern verborgen sind.\n"
+        "-Anhand dieser Angabe kann abgeleitet werden, unter welchen der angrenzenden Feldern sich Minen befinden und auf welche Felder gefahrlos geklickt werden kann.\n\n" << endl;
     cout << "(1) Spielen\t(2) Menu\t(3) Beenden" << endl;
 
     cin >> eingabe;
@@ -40,12 +40,12 @@ bool einleitung()
         cin >> eingabe;
     }
 
-        if (eingabe == 1)
-            return true;
-        else if (eingabe == 3)
-            return false;
-        else
-            return menu();
+    if (eingabe == 1)
+        return true;
+    else if (eingabe == 3)
+        return false;
+    else
+        return menu();
 }
 
 bool highscores()
@@ -59,12 +59,12 @@ bool highscores()
         cin >> eingabe;
     }
 
-        if (eingabe == 1)
-            return true;
-        else if (eingabe == 3)
-            return false;
-        else
-            return menu();
+    if (eingabe == 1)
+        return true;
+    else if (eingabe == 3)
+        return false;
+    else
+        return menu();
 }
 
 void set_Highscore(Spieler spieler)

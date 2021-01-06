@@ -57,4 +57,24 @@ void Eingabe :: eingeben(int rows, int cols){
 
     }
 }
+
+int Eingabe :: getRow()
+{
+    return row;
+}
+
+int Eingabe :: getColum()
+{
+    return col;
+}
+
+bool Eingabe :: getMarkieren()
+{
+    return markieren;
+}
+
+bool Eingabe :: getMarkeRemove()
+{
+    return markeRemove;
+}
 Eingabe :: ~Eingabe(){}

@@ -4,7 +4,6 @@
 #include "Field.h"
 #include <fstream>
 
-extern Spieler* p_highscores;
 
 bool menu();
 bool einleitung();

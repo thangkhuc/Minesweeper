@@ -8,12 +8,10 @@ SOURCES += \
         Eingabe.cpp \
         Field.cpp \
         main.cpp \
-        minesweeper.cpp \
         spieler.cpp
 
 HEADERS += \
     Cell.h \
     Eingabe.h \
     Field.h \
-    minesweeper.h \
     spieler.h
