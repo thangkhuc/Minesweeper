@@ -9,12 +9,12 @@ khuc thang
 khuc dinh thagn 
 4
 thang
+4
+thang
 3
 dinh thang
 3
 khuc thang
 3
-dinh thang khuc
-2
-khuc 
-1
+thang 2324
+3

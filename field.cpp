@@ -1,5 +1,7 @@
 #include "Field.h"
 
+Spieler* Field :: p_highscores = new Spieler[10];
+
 Field :: Field(){}
 
 void Field :: placeMine(){
@@ -49,8 +51,8 @@ void Field :: setSize()
         p_field[i] = new Cell[cols];
 
     p_minePos = new int[mineNumber];// minen initialisieren
-    Field :: setMinePos(); //minewerte definieren
-    Field :: placeMine();
+    setMinePos(); //minewerte definieren
+    placeMine();
 }
 
 void Field :: setMinePos(){
@@ -66,7 +68,7 @@ void Field :: setMinePos(){
             }
         }while (check == true);
     }
-    Field :: minePosSort();
+    minePosSort();
 }
 
 void Field :: minePosSort() {
@@ -98,7 +100,7 @@ bool Field :: openCell(Eingabe eingabe){
         p_field[eingabe.getRow()][eingabe.getColum()].setIstGeoeffnet(true);
 
         if (p_field[eingabe.getRow()][eingabe.getColum()].getIstMine() == true) { // return true wenn das Cell ein Bombe ist
-            Field :: explodieren();
+            explodieren();
             return true;
         }
         else {
@@ -113,7 +115,7 @@ bool Field :: openCell(Eingabe eingabe){
                 for (int r = row1; r <= row2 ; ++r ) {
                     for (int c = col1; c <= col2 ; ++c ) {
                         Eingabe eingabe1(eingabe.getRow() + r, eingabe.getColum() + c, false, false);
-                        Field :: openCell(eingabe1);
+                        openCell(eingabe1);
                     }
                 }
                 return false;
@@ -145,7 +147,8 @@ void Field :: explodieren(){
 }
 
 
-void Field :: printField(){
+void Field :: printField() const
+{
     cout << " " ;
     for (int i = 0; i < cols ; ++i ) {
         cout.width(3);
@@ -177,7 +180,7 @@ void Field :: printField(){
     }
 }
 
-bool Field :: winCondition()
+bool Field :: winCondition() const
 {
     int count = 0;
 
@@ -192,14 +195,6 @@ bool Field :: winCondition()
         return true;
     else
         return false;
-}
-
-Field :: ~Field(){
-    delete p_minePos;
-    for (int i = 0; i < rows ;i++ )
-        delete[] p_field[i];
-    delete p_field;
-
 }
 
 void Field :: menu() // true fuer spielen, flase fuer beenden
@@ -285,7 +280,7 @@ void Field :: einleitung()
 void Field :: highscores()
 {
     int eingabe;
-    highscores_ausgeben();
+    print_highscores();
     cout << "(1) Spielen\t(2) Menu\t(3) Beenden" << endl;
     cin >> eingabe;
     while (eingabe != 1 && eingabe != 2 && eingabe != 3) {
@@ -299,7 +294,7 @@ void Field :: highscores()
     }
 }
 
-void Field :: set_Highscore(Spieler spieler)
+void Field :: set_Highscore(const Spieler& spieler)
 {
     // schreibt das Score in der Highscore Tabelle ein
     for (int i = 0; i < 10 ; ++i ) {
@@ -312,7 +307,7 @@ void Field :: set_Highscore(Spieler spieler)
     }
 
 }
-void Field :: save_Highscores()
+void Field :: save_Highscores() const
 {
     ofstream highscores_Save("C:/Users/DELL 7480/Documents/Minesweeper/highscores_Save.txt");
     for (int i = 0; i < 10 ; ++i ) {
@@ -321,7 +316,7 @@ void Field :: save_Highscores()
     }
 }
 
-void load_Highscores()
+void Field :: load_Highscores() const
 {
     ifstream highscores_Save("C:/Users/DELL 7480/Documents/Minesweeper/highscores_Save.txt");
     string score;
@@ -339,7 +334,8 @@ void load_Highscores()
     }
 }
 
-void Field :: highscores_ausgeben(){
+void Field :: print_highscores() const
+{
     cout << "\t\t--------------" << endl;
     cout << "\t\t| HIGHSCORES |" << endl;
     cout << "\t\t--------------" << endl;
@@ -349,4 +345,12 @@ void Field :: highscores_ausgeben(){
         cout.width(20);
         cout << left << p_highscores[i].name << "\t\t\t" << right << p_highscores[i].score << endl;
     }
+}
+
+Field :: ~Field(){
+    delete p_minePos;
+    for (int i = 0; i < rows ;i++ )
+        delete[] p_field[i];
+    delete p_field;
+
 }

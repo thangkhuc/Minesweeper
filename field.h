@@ -6,35 +6,34 @@
 #include "spieler.h"
 #include <fstream>
 
-extern Spieler* p_highscores;
-
 class Field{
 private:
     int rows, cols;
     Cell** p_field;
     int* p_minePos;
     int mineNumber;
+    static Spieler* p_highscores; // static variable
 public:
     Field();
     ~Field();
 
     void setMinePos();
-    void printField();
+    void printField() const;
     void minePosSort();
-    bool openCell(const Eingabe eingabe);
-    int aroundMineCount(const Eingabe eingabe);
+    bool openCell(Eingabe);
+    int aroundMineCount(Eingabe);
     void explodieren();
     void placeMine();
     void setSize();
-    bool winCondition();
+    bool winCondition() const;
     void menu();
     void spielen();
     void einleitung();
     void highscores();
-    void set_Highscore(Spieler spieler);
-    void highscores_ausgeben();
-    void save_Highscores();
+    void set_Highscore(const Spieler& spieler);
+    void print_highscores() const;
+    void save_Highscores() const;
+    void load_Highscores() const;// nimm die gespeicherten Highscores aus gespeichertem Platz
 };
 
-void load_Highscores();// nimm die gespeicherten Highscores aus gespeichertem Platz
 #endif // FIELD_H

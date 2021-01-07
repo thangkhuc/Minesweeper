@@ -16,7 +16,7 @@ public:
     bool getIstMine();
     bool getIstGeoeffnet();
     bool getIstMarkiert();
-    int getNebeneMine();
+    int  getNebeneMine();
     void setIstMine(bool);
     void setIstGeoeffnet(bool);
     void setIstMarkiert(bool);
