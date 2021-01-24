@@ -8,7 +8,7 @@ Cell :: Cell(){
 }
 Cell :: ~Cell(){}
 
-bool Cell :: getIstMine()
+bool Cell :: getIstMine() const
 {
     return istMine;
 }
@@ -33,17 +33,17 @@ void Cell :: setNebeneMine(int set)
     nebeneMine = set;
 }
 
-bool Cell :: getIstMarkiert()
+bool Cell :: getIstMarkiert() const
 {
     return istMarkiert;
 }
 
-int Cell :: getNebeneMine()
+int Cell :: getNebeneMine() const
 {
     return nebeneMine;
 }
 
-bool Cell :: getIstGeoeffnet()
+bool Cell :: getIstGeoeffnet() const
 {
     return istGeoeffnet;
 }

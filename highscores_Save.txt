@@ -1,3 +1,7 @@
+khuc dinh thang @@@@
+20
+khuc dinh thang dep zei
+13
 khuc dinh thang 
 10
 thang khuc
@@ -6,15 +10,11 @@ khuc dinh thang 2
 8
 khuc thang
 7
+aaaaaaaaaaaaaaaa
+6
 khuc dinh thagn 
 4
 thang
 4
 thang
-3
-dinh thang
-3
-khuc thang
-3
-thang 2324
 3

@@ -1,19 +1,19 @@
-#ifndef SPIELER_H
-#define SPIELER_H
+#ifndef PLAYER_H
+#define PLAYER_H
 #include <iostream>
 using namespace std;
 
-class Spieler
+class Player
 {
 public:
     string name;
     int score;
 
-    Spieler();
-    Spieler(const Spieler& spieler);
-    ~Spieler();
-    void set_Spieler();
+    Player();
+    Player(const Player& spieler);
+    ~Player();
+    void set_name();
 
 };
 
-#endif // SPIELER_H
+#endif // PLAYER_H

@@ -1,19 +1,19 @@
-#include "spieler.h"
+#include "Player.h"
 
-Spieler::Spieler()
+Player::Player()
 {
     name = "_";
     score = 0;
 }
 
-Spieler :: Spieler(const Spieler& spieler) // kopierkonstruktur
+Player :: Player(const Player& spieler) // kopierkonstruktur
     : name(spieler.name), score(spieler.score){}
 
-void Spieler :: set_Spieler()
+void Player :: set_name()
 {
     cout << "Geben Sie Ihre Name ein: " << endl;
     fflush(stdin);
     getline(cin, name);
 }
 
-Spieler :: ~Spieler(){}
+Player :: ~Player(){}

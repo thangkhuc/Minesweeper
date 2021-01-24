@@ -13,10 +13,10 @@ public:
     Cell();
     ~Cell();
 
-    bool getIstMine();
-    bool getIstGeoeffnet();
-    bool getIstMarkiert();
-    int  getNebeneMine();
+    bool getIstMine() const;
+    bool getIstGeoeffnet() const;
+    bool getIstMarkiert() const;
+    int  getNebeneMine() const;
     void setIstMine(bool);
     void setIstGeoeffnet(bool);
     void setIstMarkiert(bool);

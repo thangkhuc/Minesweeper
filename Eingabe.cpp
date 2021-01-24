@@ -47,7 +47,8 @@ void Eingabe :: eingeben(int rows, int cols){
         cout << "Geben Sie ein Feld in solcher Form ein: (Option) (row-number) (colum-number) " << endl;
         fflush(stdin);
         getline(cin, a);
-        Eingabe :: typUmwandlung(a);
+
+        typUmwandlung(a);
         if (row <= rows && col <= cols && row != 0 && col != 0) {
             --row;
             --col;
@@ -58,22 +59,22 @@ void Eingabe :: eingeben(int rows, int cols){
     }
 }
 
-int Eingabe :: getRow()
+int Eingabe :: getRow() const
 {
     return row;
 }
 
-int Eingabe :: getColum()
+int Eingabe :: getColum() const
 {
     return col;
 }
 
-bool Eingabe :: getMarkieren()
+bool Eingabe :: getMarkieren() const
 {
     return markieren;
 }
 
-bool Eingabe :: getMarkeRemove()
+bool Eingabe :: getMarkeRemove() const
 {
     return markeRemove;
 }

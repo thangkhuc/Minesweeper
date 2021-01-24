@@ -1,6 +1,6 @@
-#include "Field.h"
+#include "field.h"
 
-Spieler* Field :: p_highscores = new Spieler[10];
+Player* Field :: p_highscores = new Player[10];
 
 Field :: Field(){}
 
@@ -125,7 +125,8 @@ bool Field :: openCell(Eingabe eingabe){
     }
 }
 
-int Field :: aroundMineCount(Eingabe eingabe){
+int Field :: aroundMineCount(Eingabe eingabe) const
+{
     int count = 0;
     int row1 = eingabe.getRow() == 0 ? 0 : -1; // wenn das Cell an der obenen Grenze ist, ist row1 0
     int col1 = eingabe.getColum() == 0 ? 0 : -1; // wenn das Cell an der rechtenen Grenze ist, ist col1 0
@@ -221,7 +222,7 @@ void Field :: menu() // true fuer spielen, flase fuer beenden
 
 void Field :: spielen()
 {
-    Spieler spieler;
+    Player spieler;
     setSize();
     printField();
     bool gameOver = false;
@@ -235,7 +236,7 @@ void Field :: spielen()
         if (gameOver == true) {
         cout << "Sie haben verloren!" << endl;
         cout << "Ihre Score: " << spieler.score << endl;
-        spieler.set_Spieler();
+        spieler.set_name();
         set_Highscore(spieler);
         break;
         }
@@ -243,7 +244,7 @@ void Field :: spielen()
 
         if (winCondition() == true) {
         cout << "Sie haben gewonnen" << endl;
-        spieler.set_Spieler();
+        spieler.set_name();
         set_Highscore(spieler);
         break;
         }
@@ -294,7 +295,7 @@ void Field :: highscores()
     }
 }
 
-void Field :: set_Highscore(const Spieler& spieler)
+void Field :: set_Highscore(const Player& spieler)
 {
     // schreibt das Score in der Highscore Tabelle ein
     for (int i = 0; i < 10 ; ++i ) {
@@ -340,7 +341,7 @@ void Field :: print_highscores() const
     cout << "\t\t| HIGHSCORES |" << endl;
     cout << "\t\t--------------" << endl;
     cout.width(10);
-    cout << right << "SPIELER\t\t\t\t\t" << right << "SCORE" << endl;
+    cout << right << "Player\t\t\t\t\t" << right << "SCORE" << endl;
     for (int i = 0; i < 10 ; ++i ) {
         cout.width(20);
         cout << left << p_highscores[i].name << "\t\t\t" << right << p_highscores[i].score << endl;

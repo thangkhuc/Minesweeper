@@ -7,11 +7,11 @@ SOURCES += \
         Cell.cpp \
         Eingabe.cpp \
         Field.cpp \
-        main.cpp \
-        spieler.cpp
+        Player.cpp \
+        main.cpp
 
 HEADERS += \
     Cell.h \
     Eingabe.h \
     Field.h \
-    spieler.h
+    Player.h

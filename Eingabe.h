@@ -12,15 +12,15 @@ private:
     bool markeRemove;
 public:
     Eingabe();
-    Eingabe(int _row, int _col, bool _markieren, bool markeRemove);
+    Eingabe(int, int, bool, bool);
     ~Eingabe();
 
-    void typUmwandlung(string eingabe);
-    void eingeben(int rows, int cols);
-    int getRow();
-    int getColum();
-    bool getMarkieren();
-    bool getMarkeRemove();
+    void typUmwandlung(string);
+    void eingeben(int, int);
+    int getRow() const;
+    int getColum() const;
+    bool getMarkieren() const;
+    bool getMarkeRemove() const;
 };
 
 #endif // EINGABE_H
