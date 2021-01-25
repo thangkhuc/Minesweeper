@@ -17,8 +17,9 @@ public:
 
     void typUmwandlung(string);
     void eingeben(int, int);
-    int getRow() const;
-    int getColum() const;
+
+    int  getRow() const;
+    int  getColum() const;
     bool getMarkieren() const;
     bool getMarkeRemove() const;
 };

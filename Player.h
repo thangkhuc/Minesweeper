@@ -11,9 +11,7 @@ public:
 
     Player();
     Player(const Player& spieler);
-    ~Player();
     void set_name();
-
 };
 
 #endif // PLAYER_H

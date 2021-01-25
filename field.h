@@ -7,12 +7,11 @@
 #include <fstream>
 
 class Field{
-private:
+protected:
     int rows, cols;
     Cell** p_field;
-    int* p_minePos;
+    vector<int> minePos;
     int mineNumber;
-    static Player* p_highscores; // static variable
 public:
     Field();
     ~Field();
@@ -22,18 +21,10 @@ public:
     void minePosSort();
     bool openCell(Eingabe);
     int  aroundMineCount(Eingabe) const;
-    void explodieren();
+    void explode();
     void placeMine();
     void setSize(); // Set size of field
     bool winCondition() const;
-    void menu();
-    void spielen();
-    void einleitung();
-    void highscores();
-    void set_Highscore(const Player&);
-    void print_highscores() const;
-    void save_Highscores() const;
-    void load_Highscores() const;// nimm die gespeicherten Highscores aus gespeichertem Platz
 };
 
 #endif // FIELD_H

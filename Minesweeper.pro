@@ -7,6 +7,7 @@ SOURCES += \
         Cell.cpp \
         Eingabe.cpp \
         Field.cpp \
+        Minesweeper_Game.cpp \
         Player.cpp \
         main.cpp
 
@@ -14,4 +15,5 @@ HEADERS += \
     Cell.h \
     Eingabe.h \
     Field.h \
+    Minesweeper_Game.h \
     Player.h

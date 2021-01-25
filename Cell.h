@@ -7,20 +7,20 @@ class Cell{
 private:
     bool istMine;
     bool istGeoeffnet;
-    int nebeneMine;
+    int  nebeneMine;
     bool istMarkiert;
 public:
     Cell();
     ~Cell();
 
-    bool getIstMine() const;
-    bool getIstGeoeffnet() const;
-    bool getIstMarkiert() const;
-    int  getNebeneMine() const;
     void setIstMine(bool);
     void setIstGeoeffnet(bool);
     void setIstMarkiert(bool);
     void setNebeneMine(int);
+    bool getIstMine() const;
+    bool getIstGeoeffnet() const;
+    bool getIstMarkiert() const;
+    int  getNebeneMine() const;
 
 };
 

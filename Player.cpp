@@ -15,5 +15,3 @@ void Player :: set_name()
     fflush(stdin);
     getline(cin, name);
 }
-
-Player :: ~Player(){}

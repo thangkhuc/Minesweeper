@@ -1,13 +1,18 @@
-#include "field.h"
 #include "time.h"
+#include "Minesweeper_Game.h"
 
 int main() {
     srand(time(0));
 
-    Field field1;
-    field1.load_Highscores();
+    MinesweeperGame game;
+    game.load_saveGame();
 
-    field1.menu();
+    bool state = game.menu();
+
+    while (!state){
+        MinesweeperGame game;
+        state = game.menu();
+    }
 
     return 0;
 }
