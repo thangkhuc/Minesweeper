@@ -16,12 +16,13 @@ public:
     void play(); //menupunkt
     bool tutorial(); //menupunkt
     bool highscores(); //menupunkt
-    bool demo(); //menupunkt
-    void add_game(); //add the current game into the "games" array
-    void print_highscores() const;
-    void save_game() const;
-    void load_saveGame(); //load saved Games into the "games" array
-    void set_zug(const Eingabe&); // save each move into "zug" attribute  through insert value
+    bool demo(int); //menupunkt
+
+    void addGame(); //add the current game into the "games" array
+    void printHighscores() const;
+    void saveGame() const;
+    void loadSaveGame(); //load saved Games into the "games" array
+    void setZug(const Eingabe&); // save each move into "zug" attribute  through insert value
 };
 
 #endif // MINESWEEPER_GAME_H

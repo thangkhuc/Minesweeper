@@ -26,22 +26,22 @@ void Field::placeMine()
 
 void Field::setSize()
 {
+    system("cls");
     int eingabe;
 
     cout << "Waehlen Sie die Schwierigkeit aus:\n(1) 10x10 mit 10 Minen"
             "\t(2) 20x20 mit 50 Minen\t(3) 30x30 mit 100 Mine" << endl;
     cin >> eingabe;
-    while (eingabe != 1 && eingabe != 2 && eingabe != 3) {
-        cout << "ungueltige Eingabe" << endl;
-        cin >> eingabe;
-    }
 
     rows = eingabe * 10;
     cols = eingabe * 10;
 
-    if (eingabe == 1) mineNumber = 10;
-    else if (eingabe == 2) mineNumber = 50;
-    else mineNumber = 100;
+    switch (eingabe) {
+    case 1: {mineNumber = 10; break;}
+    case 2: {mineNumber = 50; break;}
+    case 3: {mineNumber = 100; break;}
+    default: {return setSize();}
+    }
 
     // Spielfeld initialisieren
     p_field = new Cell*[rows];
@@ -105,7 +105,7 @@ bool Field::openCell(Eingabe eingabe)
             return true;
         }
         else {
-            p_field[eingabe.getRow()][eingabe.getColum()].setNebeneMine(aroundMineCount(eingabe));
+            p_field[eingabe.getRow()][eingabe.getColum()].setNebeneMine(countAroundMine(eingabe));
 
             if (p_field[eingabe.getRow()][eingabe.getColum()].getNebeneMine() == 0) {//Wenn es keine Mine neben gibt, dann oeffnet 8 nebene Cells
                 int row1 = eingabe.getRow() == 0 ? 0 : -1;
@@ -126,7 +126,7 @@ bool Field::openCell(Eingabe eingabe)
     }
 }
 
-int Field::aroundMineCount(Eingabe eingabe) const
+int Field::countAroundMine(Eingabe eingabe) const
 {
     int count = 0;
     int row1 = eingabe.getRow() == 0 ? 0 : -1; // wenn das Cell an der obenen Grenze ist, ist row1 0

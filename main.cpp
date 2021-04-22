@@ -5,7 +5,7 @@ int main() {
     srand(time(0));
 
     MinesweeperGame game;
-    game.load_saveGame();
+    game.loadSaveGame();
 
     bool state = game.menu();
 

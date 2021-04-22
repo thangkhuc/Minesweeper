@@ -20,7 +20,7 @@ public:
     void printField() const;
     void minePosSort();
     bool openCell(Eingabe);
-    int  aroundMineCount(Eingabe) const;
+    int  countAroundMine(Eingabe) const;
     void explode();
     void placeMine();
     void setSize(); // Set size of field
